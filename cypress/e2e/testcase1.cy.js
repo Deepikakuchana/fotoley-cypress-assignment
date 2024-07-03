@@ -9,14 +9,15 @@ describe('SignUp and Login', () => {
   cy.xpath("//button[normalize-space()='Sign up']").should('be.visible').click();
 
   //Ensure that the email address is entered
-  cy.xpath('//input[@placeholder="Enter email address"]').should('be.visible').type('bk9@gmail.com');
+  cy.xpath('//input[@placeholder="Enter email address"]').should('be.visible').type('yux@gmail.com');
 
   //Ensure that it is going to the next page after clicking on the arrow button
   cy.xpath('//button[@type="submit"]//*[name()="svg"]').click();
 
   //Ensure that the password is entered 
   cy.xpath('//input[@placeholder="Enter password"]').should('be.visible').type('abc@1234');
-  cy.xpath('//input[@placeholder="Retype password"]').should('be.visible').type('abc@1234');
+  //cy.xpath('//input[@placeholder="Retype password"]').should('be.visible').type('abc@1234');
+  cy.xpath('//input[@id="mui-4"]').should('be.visible').type('abc@1234');
 
   //Ensure that it is going to the next page after clicking on the arrow button
   cy.xpath('//button[@type="submit"]//*[name()="svg"]').click();
@@ -66,7 +67,7 @@ describe('SignUp and Login', () => {
 
   cy.wait(10000);
   cy.xpath('(//*[name()="svg"][@id="Icons"])[1]').click();
-  cy.xpath('//button[@aria-label="Logout"]//*[name()="svg"]').click();
+  cy.xpath('//button[@aria-label="Logout"]//*[name()="svg"]').click();   
 
   });
   
@@ -93,5 +94,6 @@ describe('SignUp and Login', () => {
    cy.xpath('//button[@aria-label="Logout"]//*[name()="svg"]').click();
   
   
-  });
+  }); 
+
 });
